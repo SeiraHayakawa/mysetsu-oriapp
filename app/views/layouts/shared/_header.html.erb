@@ -1,0 +1,16 @@
+<header class="header">
+  <a class="logo_space" href="#">
+    <%= image_tag 'logo.png', alt: 'App Logo', class: 'app-logo' %>
+  </a>
+  <div class="right_header">
+    <% if user_signed_in? %>
+      <li><%= link_to 'プレビュー', "#" , class: "header_bottun" %></li>
+      <li><%= link_to '共有', "#" , class: "header_bottun" %></li>
+      <li><%= link_to 'ログアウト', "#", class: "header_bottun"%></li>
+      <li><%= link_to "hoge", "#", class: "header_bottun"%> </li> 
+    <% else %>
+      <li><%= link_to 'ログイン', "#", class: "header_bottun" %></li>
+      <li><%= link_to '新規登録', "#", class: "header_bottun" %></li>
+    <% end %>
+  </div>
+</header>

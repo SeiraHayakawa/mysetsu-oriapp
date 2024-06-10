@@ -1,0 +1,15 @@
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* フッターの高さ */
+  line-height: 60px; /* フッター内のテキストの高さ */
+  background-color: #bda687fa;
+}
+
+
+.text_com {
+  font-size: 18px;
+  padding: 10px 20px;
+}

@@ -1,0 +1,22 @@
+.app-logo {
+  width: 40px;
+  height: auto;
+}
+
+.header {
+  color: #bda687fa;
+}
+
+.right_header {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.header_bottun {
+  width: 60px;
+  color: #333;
+}
