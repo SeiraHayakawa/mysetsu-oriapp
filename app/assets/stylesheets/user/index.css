@@ -1,0 +1,26 @@
+
+.main{
+  background-color: #eff7e7;
+  height: 100vh;
+}
+
+.parent{
+  width :360px;
+  height: 360px;
+  background-color: #e4dcbbe0;
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
+  margin-top: auto;
+  position: absolute;
+
+}
+
+.child{
+  width :600px;
+  height: 400px;
+  background-color: #d5dad0dc;
+  top: 100px;
+  left: 100px;
+  position: relative;
+}

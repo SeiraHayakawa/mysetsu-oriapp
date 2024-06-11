@@ -1,22 +1,44 @@
 .app-logo {
-  width: 40px;
+  width: 100px;
   height: auto;
 }
 
 .header {
-  color: #bda687fa;
+  background-color: #eff7e7;
+  padding: 1rem;
+}
+
+.headers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .right_header {
   font-size: 18px;
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
+  justify-content: flex-end;
 }
 
-.header_bottun {
-  width: 60px;
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 15px;
+}
+
+.header_button {
   color: #333;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.header_button:hover {
+  background-color: #e9dcbc;
 }
