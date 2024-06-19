@@ -8,11 +8,13 @@ class IntroductionsController < ApplicationController
 
   def create
     @introduction = Introduction.new(introduction_params)
-    @introduction.torisetsu = current_user.torisetsu
-    if @introduction.save
-      redirect_to @introduction, notice: 'MYSETSUが追加されました。'
-    else
-      render :new
+    if current_user.torisetsu.present?
+      @introduction.torisetsu = current_user.torisetsu
+      if @introduction.save
+        redirect_to torisetsu_path(current_user.torisetsu)
+      else
+        render :new
+      end
     end
   end
 
@@ -21,7 +23,7 @@ class IntroductionsController < ApplicationController
 
   def update
     if @introduction.update(introduction_params)
-      redirect_to @introduction, notice: 'MYSETSUが更新されました。'
+      redirect_to torisetsus_path(current_user.torisetsu)
     else
       render :edit
     end
