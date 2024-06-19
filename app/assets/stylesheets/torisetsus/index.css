@@ -1,0 +1,60 @@
+.background-container {
+  background-image: url('haikei.png');
+  background-size: cover; /* 画像をコンテナのサイズに合わせる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  min-height: 100vh; /* コンテナの高さを全画面に設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* 子要素の絶対位置を基準にする */
+}
+
+.background-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* 白い背景を半透明で重ねる */
+  backdrop-filter: blur(1px); /* 背景をぼかす */
+  z-index: 1; /* 子要素の下に配置 */
+}
+
+.container {
+  position: relative; /* 子要素をこのコンテナ内に相対位置で配置 */
+  background: rgba(255, 255, 255, 0.8); /* 背景の上に半透明の白い背景 */
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 2; /* 背景の上に配置 */
+}
+
+.list-group {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  margin-bottom: 10px;
+}
+
+.torisetsu_button {
+  display: block;
+  width: 300px; /* ボタンの幅を調整 */
+  padding: 15px 30px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: #e9dcbc;
+    color: #000;
+  }
+}

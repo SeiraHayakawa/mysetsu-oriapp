@@ -1,0 +1,16 @@
+<%= render "shared/header" %>
+
+<div class="background-container">
+  <div class="container text-center">
+    <ul class="list-group">
+      <li class="list-item"><%= link_to 'ユーザーについて', new_introduction_path, class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '生活について', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+    </ul>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
