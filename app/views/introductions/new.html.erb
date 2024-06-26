@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
 
   <div class="forms-wraps">
-    <%= form_with model: @introduction, class:"form-class", local: true do |f| %>
+    <%= form_with model: [@torisetsu, @introduction], url: torisetsu_introductions_path(@torisetsu), class:"form-class", local: true do |f| %>
       <div class='form-box'>
           <h1>フォームに記入してください</h1>
           <%= render 'shared/error_messages', model: f.object %>

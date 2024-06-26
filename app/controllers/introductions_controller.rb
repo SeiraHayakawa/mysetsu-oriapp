@@ -2,10 +2,11 @@ class IntroductionsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_introduction, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
+  before_action :set_torisetsu, only: [:new, :create]
 
   def new
     if current_user.torisetsu.introduction.present?
-      redirect_to introduction_path(current_user.torisetsu.introduction.id)
+      redirect_to torisetsu_introduction_path(current_user.torisetsu, current_user.torisetsu.introduction.id)
     end
     @introduction = Introduction.new
   end
@@ -14,7 +15,7 @@ class IntroductionsController < ApplicationController
     torisetsu = current_user.torisetsu || current_user.create_torisetsu
     @introduction = torisetsu.build_introduction(introduction_params)
     if @introduction.save
-      redirect_to torisetsus_path, notice: 'プロフィールが作成されました。'
+      redirect_to torisetsu_introduction_path(torisetsu, @introduction), notice: 'プロフィールが作成されました。'
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +29,7 @@ class IntroductionsController < ApplicationController
 
   def update
     if @introduction.update(introduction_params)
-      redirect_to @introduction, notice: 'プロフィールが更新されました。'
+      redirect_to torisetsu_introduction_path(@torisetsu, @introduction), notice: 'プロフィールが更新されました。'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -36,13 +37,18 @@ class IntroductionsController < ApplicationController
 
   def destroy
     @introduction.destroy
-    redirect_to torisetsus_path(current_user.torisetsu), notice: 'プロフィールが削除されました。'
+    redirect_to torisetsus_path, notice: 'プロフィールが削除されました。'
   end
 
   private
 
   def set_introduction
     @introduction = Introduction.find(params[:id])
+    @torisetsu = @introduction.torisetsu
+  end
+
+  def set_torisetsu
+    @torisetsu = current_user.torisetsu
   end
 
   def introduction_params

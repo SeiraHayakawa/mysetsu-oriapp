@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<div class="introduction-background-container">
+  <div class="introduction-container">
+    <div class='introduction-box'>
+      <h1>生活について</h1>
+      <table class="introduction-info-table">
+        <tr>
+          <th>寝起きはいいですか</th>
+          <td><%= @life.life_morning %></td>
+        </tr>
+        <tr>
+          <th>朝ごはんはたべますか</th>
+          <td><%= @life.life_breakfast %></td>
+        </tr>
+        <tr>
+          <th>ご飯はたくさん食べますか</th>
+          <td><%= @life.life_breakfast_weight %></td>
+        </tr>
+        <tr>
+          <th>泣き虫ですか</th>
+          <td><%= @life.life_cry %></td>
+        </tr>
+        <tr>
+          <th>泣いているときはどうしてほしいですか</th>
+          <td><%= @life.life_crytime %>ほしい</td>
+        </tr>
+        <tr>
+          <th>機嫌が悪い時はどうしてほしいですか</th>
+          <td><%= @life.life_anger %>ほしい</td>
+        </tr>
+        <tr>
+          <th>喧嘩したらどうしたいですか</th>
+          <td><%= @life.life_battle %></td>
+        </tr>
+        <tr>
+          <th>睡眠が足りないとどうなりますか</th>
+          <td><%= @life.life_sleep %></td>
+        </tr>
+      </table>
+
+      <div class="introduction-actions">
+        <%= link_to '編集', edit_torisetsu_life_path(@torisetsu, @life), class: "introduction-btn-primary" %>
+        <%= link_to '削除', torisetsu_life_path(@torisetsu, @life), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

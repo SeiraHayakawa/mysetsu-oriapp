@@ -3,7 +3,7 @@
 <div class="introduction-background-container">
   <div class="introduction-container">
     <div class='introduction-box'>
-      <h1>プロフィール</h1>
+      <h1><%= current_user.nickname %>について</h1>
       <table class="introduction-info-table">
         <tr>
           <th>誕生日</th>
@@ -40,8 +40,8 @@
       </table>
 
       <div class="introduction-actions">
-        <%= link_to '編集', edit_introduction_path(@introduction), class: "introduction-btn-primary" %>
-        <%= link_to '削除', introduction_path(@introduction), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "introduction-btn-danger" %>
+        <%= link_to '編集', edit_torisetsu_introduction_path(@torisetsu, @introduction), class: "introduction-btn-primary" %>
+        <%= link_to '削除', torisetsu_introduction_path(@torisetsu, @introduction), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
       </div>
     </div>
   </div>

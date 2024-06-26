@@ -1,7 +1,6 @@
 class Introduction < ApplicationRecord
   belongs_to :torisetsu
 
-  
   validates :birth_day, presence: true
   validates :blood_type, presence: true
   validates :body_height, presence: true

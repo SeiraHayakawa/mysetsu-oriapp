@@ -1,51 +1,54 @@
 <%= render "shared/header" %>
 
-<h1>プロフィールを編集</h1>
+  <div class="forms-wraps">
+    <%= form_with model:[@torisetsu, @introduction], class:"form-class", local: true do |f| %>
+      <div class='form-box'>
+          <h1>フォームを編集してください</h1>
+          <%= render 'shared/error_messages', model: f.object %>
+          <div class="form-group">
+            <%= f.label :birth_day, "誕生日" %>
+            <%= f.date_field :birth_day, class: "form-control" %>
+          </div>
 
-<%= form_with model: @introduction, local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :birth_day, "誕生日" %>
-    <%= f.date_field :birth_day, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :blood_type, "血液型" %>
-    <%= f.select :blood_type, options_for_select(['A', 'B', 'O', 'AB'], @introduction.blood_type), { include_blank: '選択してください' }, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :body_height, "身長 (cm)" %>
-    <%= f.number_field :body_height, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :body_weight, "体重 (kg)" %>
-    <%= f.number_field :body_weight, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :favorite_food, "好きな食べ物" %>
-    <%= f.text_field :favorite_food, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :dislike_food, "苦手な食べ物" %>
-    <%= f.text_field :dislike_food, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :favorite_color, "好きな色" %>
-    <%= f.text_field :favorite_color, class: "form-control" %>
-  </div>
-  
-  <div class="form-group">
-    <%= f.label :favorite_place, "好きな場所" %>
-    <%= f.text_field :favorite_place, class: "form-control" %>
-  </div>
-  
-  <div class="actions">
-    <%= f.submit "更新", class: "btn btn-primary" %>
-  </div>
-<% end %>
+          <div class="form-group">
+            <%= f.label :blood_type, "血液型" %>
+            <%= f.select :blood_type, options_for_select(['A', 'B', 'O', 'AB', '不明']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
 
+          <div class="form-group">
+            <%= f.label :body_height, "身長 (cm)" %>
+            <%= f.number_field :body_height, class: "form-control" %>cm
+          </div>
+
+          <div class="form-group">
+            <%= f.label :body_weight, "体重 (kg)" %>
+            <%= f.text_field :body_weight, class: "form-control", placeholder: "(ひみつ)でもいいよ" %>kg
+          </div>
+
+          <div class="form-group">
+            <%= f.label :favorite_food, "好きな食べ物" %>
+            <%= f.text_field :favorite_food, class: "form-control", placeholder: "EX)ケーキ" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :dislike_food, "苦手な食べ物" %>
+            <%= f.text_field :dislike_food, class: "form-control", placeholder: "EX)ウナギ" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :favorite_color, "好きな色" %>
+            <%= f.text_field :favorite_color, class: "form-control", placeholder: "EX)水色" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :favorite_place, "好きな場所" %>
+            <%= f.text_field :favorite_place, class: "form-control", placeholder: "EX)布団の中" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "完了", class: "btn-primary" %>
+          </div>
+      </div>
+    <% end %>
+  </div>
 <%= render "shared/footer" %>

@@ -1,9 +1,10 @@
 class TorisetsusController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_torisetsu, only: [:show, :edit, :update, :destroy]
+  before_action :set_or_create_torisetsu, only: [:index, :show]
 
   def index
   end
+
 
   def show
     @torisetsu = Torisetsu.find(params[:id])
@@ -15,7 +16,7 @@ class TorisetsusController < ApplicationController
 
   private
 
-  def set_torisetsu
-    @torisetsu = current_user.torisetsu
+  def set_or_create_torisetsu
+    @torisetsu = current_user.torisetsu || current_user.create_torisetsu
   end
 end
