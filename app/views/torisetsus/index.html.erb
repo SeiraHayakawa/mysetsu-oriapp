@@ -8,26 +8,24 @@
       </div>
     </div>
     <ul class="list-group">
-      <% if @torisetsu.nil? %>
-        <li class="list-item"><%= link_to "#{current_user.nickname}について", new_introduction_path, class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '生活について', new_life_path, class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+      <% if @torisetsu.introduction.present? %>
+        <li class="list-item"><%= link_to "#{current_user.nickname}について", torisetsu_introduction_path(@torisetsu, @torisetsu.introduction), class: "torisetsu_button" %></li>
       <% else %>
-        <li class="list-item"><%= link_to "#{current_user.nickname}について", introduction_path(@torisetsu.introduction), class: "torisetsu_button" %></li>
-        <%# <li class="list-item"><%= link_to '生活について', life_path(@torisetsu.life), class: "torisetsu_button"</li> %> 
-        <li class="list-item"><%= link_to '生活について', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
-        <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to "#{current_user.nickname}について", new_torisetsu_introduction_path(@torisetsu), class: "torisetsu_button" %></li>
       <% end %>
+
+      <% if @torisetsu.life.present? %>
+        <li class="list-item"><%= link_to '生活について', torisetsu_life_path(@torisetsu, @torisetsu.life), class: "torisetsu_button" %></li>
+      <% else %>
+        <li class="list-item"><%= link_to '生活について', new_torisetsu_life_path(@torisetsu), class: "torisetsu_button" %></li>
+      <% end %>
+
+      <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
+      <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
     </ul>
   </div>
 </div>
 
 <%= render "shared/footer" %>
-
-

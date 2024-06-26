@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_21_045603) do
     t.date "birth_day", null: false
     t.string "blood_type", null: false
     t.integer "body_height", null: false
-    t.integer "body_weight", null: false
+    t.string "body_weight", null: false
     t.string "favorite_food", null: false
     t.string "dislike_food", null: false
     t.string "favorite_color", null: false
