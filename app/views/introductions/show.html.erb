@@ -1,0 +1,50 @@
+<%= render "shared/header" %>
+
+<div class="introduction-background-container">
+  <div class="introduction-container">
+    <div class='introduction-box'>
+      <h1>プロフィール</h1>
+      <table class="introduction-info-table">
+        <tr>
+          <th>誕生日</th>
+          <td><%= @introduction.birth_day.strftime('%Y年%m月%d日') %></td>
+        </tr>
+        <tr>
+          <th>血液型</th>
+          <td><%= @introduction.blood_type %></td>
+        </tr>
+        <tr>
+          <th>身長</th>
+          <td><%= @introduction.body_height %> cm</td>
+        </tr>
+        <tr>
+          <th>体重</th>
+          <td><%= @introduction.body_weight %> kg</td>
+        </tr>
+        <tr>
+          <th>好きな食べ物</th>
+          <td><%= @introduction.favorite_food %></td>
+        </tr>
+        <tr>
+          <th>苦手な食べ物</th>
+          <td><%= @introduction.dislike_food %></td>
+        </tr>
+        <tr>
+          <th>好きな色</th>
+          <td><%= @introduction.favorite_color %></td>
+        </tr>
+        <tr>
+          <th>好きな場所</th>
+          <td><%= @introduction.favorite_place %></td>
+        </tr>
+      </table>
+
+      <div class="introduction-actions">
+        <%= link_to '編集', edit_introduction_path(@introduction), class: "introduction-btn-primary" %>
+        <%= link_to '削除', introduction_path(@introduction), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "introduction-btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

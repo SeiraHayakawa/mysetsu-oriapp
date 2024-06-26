@@ -62,19 +62,47 @@ body {
 }
 
 .forms-wraps{
-  display: flex;
-  justify-content: center; /* 横方向の中央揃え /
-  align-items: center; / 縦方向の中央揃え */
-  }
+  background-image: url('haikei.png');
+  background-size: cover; /* 画像をコンテナのサイズに合わせる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  min-height: 100vh; /* コンテナの高さを全画面に設定 */
 
-.forms-wraps .form-class{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+
+
+
+.form-class{
   width: 100%; 
   max-width: 600px;
-
+  padding: 40px
 }
 .form-box {
   background-color: #E3DED2;
   padding-bottom: 50px;
-  padding-top: 40px;
+  padding-top: 30px;
   border-radius: 20px;
 }
+
+.input-with-suffix {
+  display: flex;
+  align-items: center;
+}
+
+.form-control-with-suffix {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.suffix {
+  margin-left: 10px;
+  font-size: 16px;
+}
+

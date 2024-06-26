@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   position: relative; /* 子要素の絶対位置を基準にする */
+  width: 100vw;
 }
 
 .background-container::before {
@@ -57,4 +58,14 @@
     background-color: #e9dcbc;
     color: #000;
   }
+}
+
+.top-text-torisetsu{
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+.top-text-torisetsus{
+  display: flex;
+  justify-content: center;
 }

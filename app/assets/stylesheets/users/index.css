@@ -7,13 +7,14 @@ body, html {
 
 .home-container{
 
+  width: 100vw;
   background-color: #F0EFE9;
 }
 
 .home-top-container{
   display: flex;
   justify-content: space-between;
-  padding: 10px 60px 15px 40px;
+  padding: 0px 80px 1px 80px;
 }
 
 .left-top-container{
@@ -23,9 +24,13 @@ body, html {
 
 
 .app-preview{
-  width: 600px;
+  width: 650px;
   height: auto;
+}
 
+.app-kanngaeru{
+  width: auto;
+  height: 250px;
 }
 
 
@@ -33,21 +38,22 @@ body, html {
   border-radius: 50% 20% / 10% 40%;
   padding: 0 20px;
   background-color: #e9dcbc;
+  margin: 10px 45px 0 0;
 }
 
 .left-picture-container{
-
-  padding-top: 70px;
+  padding-left: 55px;
+  padding-top: 24px;
 }
 
 .home-bottom-container{
-  margin: 0px 100px 0 100px;
+  margin: 10px 100px 0 100px;
   background-color: #e9dcbc;
   border-radius: 50% 20% / 10% 40%;
 }
 
 .bottom-center-container{
-  padding: 25px 100px 50px 100px;
+  padding: 1px 100px 21px 100px;
 }
 
 .user_index_button{

@@ -35,7 +35,7 @@ has_one : hobby
 |birth_day         |date      |null: false              |
 |blood_type        |string    |null: false              |
 |body_height       |integer   |null: false              |
-|body_weight       |integer   |null: false              |
+|body_weight       |string    |null: false              |
 |favorite_food     |string    |null: false              |
 |dislike_food      |string    |null: false              |
 |favorite_color    |string    |null: false              |
@@ -48,9 +48,16 @@ belongs_to :torisetsu
 
 
 ## lifes
-|Column            |Type   |Options                  |
-|          |string |null: false              |
-|torisetsu|references|null: false, foreign_key: true|
+|Column               |Type       |Options                       |
+|life_morning         |string     |null: false                   |
+|life_breakfast       |string     |null: false                   |
+|life_breakfast_weight|string     |null: false                   |
+|life_cry             |string     |null: false                   |
+|life_crytime         |string     |null: false                   |
+|life_anger           |string     |null: false                   |
+|life_battle          |string     |null: false                   |
+|life_sleep           |string     |null: false                   |
+|torisetsu            |references |null: false, foreign_key: true|
 
 
 ### Association

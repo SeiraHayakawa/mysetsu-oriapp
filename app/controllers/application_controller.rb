@@ -13,7 +13,11 @@ class ApplicationController < ActionController::Base
     ])
   end
 
+  protected
+
   def after_sign_in_path_for(resource)
-    torisetsus_path #遷移させたいページのpathを記述
+    torisetsus_path # ログイン後のリダイレクト先を指定します
   end
+
 end
+

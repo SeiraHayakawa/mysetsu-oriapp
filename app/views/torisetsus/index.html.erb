@@ -2,15 +2,32 @@
 
 <div class="background-container">
   <div class="container text-center">
+    <div class="top-text-torisetsus">
+      <div class="top-text-torisetsu">
+        項目を選択してください
+      </div>
+    </div>
     <ul class="list-group">
-      <li class="list-item"><%= link_to 'ユーザーについて', new_introduction_path, class: "torisetsu_button" %></li>
-      <li class="list-item"><%= link_to '生活について', "#", class: "torisetsu_button" %></li>
-      <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
-      <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
-      <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
-      <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+      <% if @torisetsu.nil? %>
+        <li class="list-item"><%= link_to "#{current_user.nickname}について", new_introduction_path, class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '生活について', new_life_path, class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+      <% else %>
+        <li class="list-item"><%= link_to "#{current_user.nickname}について", introduction_path(@torisetsu.introduction), class: "torisetsu_button" %></li>
+        <%# <li class="list-item"><%= link_to '生活について', life_path(@torisetsu.life), class: "torisetsu_button"</li> %> 
+        <li class="list-item"><%= link_to '生活について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '学校について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '仕事について', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to 'パートナーについて', "#", class: "torisetsu_button" %></li>
+        <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+      <% end %>
     </ul>
   </div>
 </div>
 
 <%= render "shared/footer" %>
+
+
