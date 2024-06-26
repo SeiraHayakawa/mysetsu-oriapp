@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users
   resources :torisetsus
     resources :introductions
-
+    resources :lifes
 end

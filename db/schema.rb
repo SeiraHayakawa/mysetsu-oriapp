@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_17_072311) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_21_045603) do
   create_table "introductions", charset: "utf8", force: :cascade do |t|
     t.date "birth_day", null: false
     t.string "blood_type", null: false
@@ -24,6 +24,21 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_17_072311) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["torisetsu_id"], name: "index_introductions_on_torisetsu_id"
+  end
+
+  create_table "lives", charset: "utf8", force: :cascade do |t|
+    t.string "life_morning", null: false
+    t.string "life_breakfast", null: false
+    t.string "life_breakfast_weight", null: false
+    t.string "life_cry", null: false
+    t.string "life_crytime", null: false
+    t.string "life_anger", null: false
+    t.string "life_battle", null: false
+    t.string "life_sleep", null: false
+    t.bigint "torisetsu_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["torisetsu_id"], name: "index_lives_on_torisetsu_id"
   end
 
   create_table "torisetsus", charset: "utf8", force: :cascade do |t|
@@ -51,5 +66,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_17_072311) do
   end
 
   add_foreign_key "introductions", "torisetsus"
+  add_foreign_key "lives", "torisetsus"
   add_foreign_key "torisetsus", "users"
 end

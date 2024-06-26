@@ -1,1 +1,90 @@
-<%= current_user.nickname %>の取扱説明書
+<%= render "shared/header" %>
+
+<div class="manual-container">
+  <div class="manual-top-container">
+    <div class="manual-top-left-container">
+      <div class="manual-top-left-container-1">取扱説明書</div>
+      <div class="manual-top-left-container-2"><%= @user.family_name %>  <%= @user.first_name %></div>
+      <div class="manual-top-left-container-3">ver.<%= Date.today.strftime('%Y.%m.%d') %></div>
+      <div class="manual-top-left-container-4">
+        この度はMYSETSUをご使用いただきありがとうございます。
+      </div>
+    </div>
+
+    <table class="info-table">
+      <tr>
+        <th>ニックネーム</th>
+        <td><%= @user.nickname %></td>
+      </tr>
+      <tr>
+        <th>身長</th>
+        <td><%= @introduction.body_height %> cm</td>
+      </tr>
+      <tr>
+        <th>体重</th>
+        <td><%= @introduction.body_weight %> kg</td>
+      </tr>
+      <tr>
+        <th>製造日</th>
+        <td><%= @introduction.birth_day.strftime('%Y.%m.%d') %></td>
+      </tr>
+      <tr>
+        <th>血液型</th>
+        <td><%= @introduction.blood_type %></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="important-note">
+    よく読んで正しくお使いください
+  </div>
+
+  <div class="usage-instructions">
+    <div class="usage-instructions-p">・ご使用前にこの取扱説明書をよくお読みのうえ、安全に正しくご使用ください。</div>
+    <div class="usage-instructions-p">・この取扱説明書はあなたの人生を手助けしてくれます。大切に保存しましょう。</div>
+    <div class="usage-instructions-p">・あなたを1番理解してあげられるのも、大切にできるのもあなた自身です。自身をしっかりと理解しましょう。</div>
+  </div>
+
+  
+  <div class="important-note">
+    生活において
+  </div>
+  <div class="usage-instructions">
+  <div class="usage-instructions-p">
+    ・朝の寝起きは比較的に<%= @life.life_morning %>です。
+    <% if @life.life_morning == 'よい' %>
+      安心して朝の時間を過ごしましょう。
+    <% else %>
+      自覚はしているので、そっとしておきましょう。
+    <% end %>
+  </div>
+    <div class="usage-instructions-p">
+      ・朝ごはんは<%= @life.life_breakfast %>です。
+      <% if @life.life_breakfast == '食べる派' %>
+        <% if @life.life_breakfast_weight == 'よく食べる' %>
+          量もしっかり食べるのでたくさん食べて力をつけましょう。
+        <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
+          ですが食べすぎには気をつけましょう。
+        <% else %>
+          人並みに食べましょう。
+        <% end %>
+      <% else %>
+        <% if @life.life_breakfast_weight == 'よく食べる' %>
+          ですが他の時間にはよく食べます。ご飯を食べる時間に注意してください。
+        <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
+          ほかの時間もあまり食べません。小食です。
+        <% else %>
+          他の時間はほどほどに食べます。1日2食です。
+        <% end %>
+      <% end %>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<%= render "shared/footer" %>
