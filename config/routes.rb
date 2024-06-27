@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :torisetsus do
     resources :introductions
     resources :lifes
+    resources :works
+    resources :schools
+    resources :partners
   end
 end

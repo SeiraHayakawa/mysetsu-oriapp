@@ -1,0 +1,66 @@
+<%= render "shared/header" %>
+
+<div class="introduction-background-container">
+  <div class="introduction-container">
+    <div class='introduction-box'>
+      <h1>学校について</h1>
+      <table class="introduction-info-table">
+        <tr>
+          <th>一番好きな勉強</th>
+          <td><%= @school.favorite_subject %></td>
+        </tr>
+        <tr>
+          <th>その理由</th>
+          <td><%= @school.favorite_subject_reason %></td>
+        </tr>
+        <tr>
+          <th>一番嫌いな勉強</th>
+          <td><%= @school.least_favorite_subject %></td>
+        </tr>
+        <tr>
+          <th>その理由</th>
+          <td><%= @school.least_favorite_subject_reason %></td>
+        </tr>
+        <tr>
+          <th>好きな先生</th>
+          <td><%= @school.teacher_pet %></td>
+        </tr>
+        <tr>
+          <th>友達と話すのは好きか</th>
+          <td><%= @school.talking_with_friends %></td>
+        </tr>
+        <tr>
+          <th>集団行動は得意か</th>
+          <td><%= @school.group_activities %></td>
+        </tr>
+        <tr>
+          <th>好きな給食メニュー</th>
+          <td><%= @school.lunch_preference %></td>
+        </tr>
+        <tr>
+          <th>苦手なこと</th>
+          <td><%= @school.disliked_school_activities %></td>
+        </tr>
+        <tr>
+          <th>一番仲のいい友達</th>
+          <td><%= @school.best_friend %></td>
+        </tr>
+        <tr>
+          <th>好きな学校行事</th>
+          <td><%= @school.favorite_school_event %></td>
+        </tr>
+        <tr>
+          <th>好きな場所</th>
+          <td><%= @school.favorite_place_at_school %></td>
+        </tr>
+      </table>
+
+      <div class="introduction-actions">
+        <%= link_to '編集', edit_torisetsu_school_path(@torisetsu, @school), class: "introduction-btn-primary" %>
+        <%= link_to '削除', torisetsu_school_path(@torisetsu, @school), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
-
 <div class="manual-container">
+
   <div class="manual-top-container">
     <div class="manual-top-left-container">
       <div class="manual-top-left-container-1">取扱説明書</div>
@@ -11,28 +11,57 @@
       </div>
     </div>
 
-    <table class="info-table">
-      <tr>
-        <th>ニックネーム</th>
-        <td><%= @user.nickname %></td>
-      </tr>
-      <tr>
-        <th>身長</th>
-        <td><%= @introduction.body_height %> cm</td>
-      </tr>
-      <tr>
-        <th>体重</th>
-        <td><%= @introduction.body_weight %> kg</td>
-      </tr>
-      <tr>
-        <th>製造日</th>
-        <td><%= @introduction.birth_day.strftime('%Y.%m.%d') %></td>
-      </tr>
-      <tr>
-        <th>血液型</th>
-        <td><%= @introduction.blood_type %></td>
-      </tr>
-    </table>
+    <% if @introduction.nil? %>
+      <table class="info-table">
+        <tr>
+          <th>ニックネーム</th>
+          <td><%= @user.nickname %></td>
+        </tr>
+        <tr>
+          <th>身長</th>
+          <td> cm</td>
+        </tr>
+        <tr>
+          <th>体重</th>
+          <td>kg</td>
+        </tr>
+        <tr>
+          <th>製造日</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>血液型</th>
+          <td></td>
+        </tr>
+      </table>
+    <% else %>
+      <table class="info-table">
+        <tr>
+          <th>ニックネーム</th>
+          <td><%= @user.nickname %></td>
+        </tr>
+        <tr>
+          <th>身長</th>
+          <td><%= @introduction.body_height %> cm</td>
+        </tr>
+        <tr>
+          <th>体重</th>
+            <% if @introduction.body_weight == 'ひみつ' || @introduction.body_weight == '秘密' %>
+              <td>ひみつ</td>
+            <% else %>
+              <td><%= @introduction.body_weight %> kg</td>
+            <% end %>
+        </tr>
+        <tr>
+          <th>製造日</th>
+          <td><%= @introduction.birth_day.strftime('%Y.%m.%d') %></td>
+        </tr>
+        <tr>
+          <th>血液型</th>
+          <td><%= @introduction.blood_type %></td>
+        </tr>
+      </table>
+    <% end %>
   </div>
 
 
@@ -46,45 +75,181 @@
     <div class="usage-instructions-p">・あなたを1番理解してあげられるのも、大切にできるのもあなた自身です。自身をしっかりと理解しましょう。</div>
   </div>
 
-  
-  <div class="important-note">
-    生活において
-  </div>
-  <div class="usage-instructions">
-  <div class="usage-instructions-p">
-    ・朝の寝起きは比較的に<%= @life.life_morning %>です。
-    <% if @life.life_morning == 'よい' %>
-      安心して朝の時間を過ごしましょう。
-    <% else %>
-      自覚はしているので、そっとしておきましょう。
-    <% end %>
-  </div>
-    <div class="usage-instructions-p">
-      ・朝ごはんは<%= @life.life_breakfast %>です。
-      <% if @life.life_breakfast == '食べる派' %>
-        <% if @life.life_breakfast_weight == 'よく食べる' %>
-          量もしっかり食べるのでたくさん食べて力をつけましょう。
-        <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
-          ですが食べすぎには気をつけましょう。
-        <% else %>
-          人並みに食べましょう。
-        <% end %>
-      <% else %>
-        <% if @life.life_breakfast_weight == 'よく食べる' %>
-          ですが他の時間にはよく食べます。ご飯を食べる時間に注意してください。
-        <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
-          ほかの時間もあまり食べません。小食です。
-        <% else %>
-          他の時間はほどほどに食べます。1日2食です。
-        <% end %>
-      <% end %>
-      
+  <% if @life.present? %>
+    <div class="important-note">
+      生活において
     </div>
-  </div>
+    <div class="usage-instructions">
+      <div class="usage-instructions-p">
+        ・朝の寝起きは比較的に<%= @life.life_morning %>です。
+        <% if @life.life_morning == 'よい' %>
+          安心して朝の時間を過ごしましょう。
+        <% else %>
+          自覚はしているので、そっとしておきましょう。
+        <% end %>
+      </div>
+      <div class="usage-instructions-p">
+        ・朝ごはんは<%= @life.life_breakfast %>です。
+        <% if @life.life_breakfast == '食べる派' %>
+          <% if @life.life_breakfast_weight == 'よく食べる' %>
+            量もしっかり食べるのでたくさん食べて力をつけましょう。
+          <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
+            ですが食べすぎには気をつけましょう。
+          <% else %>
+            人並みに食べましょう。
+          <% end %>
+        <% else %>
+          <% if @life.life_breakfast_weight == 'よく食べる' %>
+            ですが他の時間にはよく食べます。ご飯を食べる時間に注意してください。
+          <% elsif @life.life_breakfast_weight == 'そんなに食べない' %>
+            ほかの時間もあまり食べません。小食です。
+          <% else %>
+            他の時間はほどほどに食べます。1日2食です。
+          <% end %>
+        <% end %>
+      </div>
+      <div class="usage-instructions-p">
+        ・<%= current_user.nickname %>は<%= @life.life_cry %>です。
+        <% if @life.life_cry == '泣き虫' %>
+          泣いているときは<%= @life.life_crytime %>ので、そうしてあげましょう。
+        <% else %>
+        泣いているときは非常事態です。<%= @life.life_crytime %>ので、そうしてあげましょう。
+        <% end %>
+      </div>
+      <div class="usage-instructions-p">
+        ・急に不機嫌になるときがあります。<%= current_user.nickname %>は<%= @life.life_anger %>みたいなので、そうしておきましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・人とけんかをすることもあります。<%= current_user.nickname %>は<%= @life.life_battle %>みたいなので、そうすると関係が速く修復するかもしれません。
+      </div>
+      <div class="usage-instructions-p">
+        ・突然<%= @life.life_sleep %>しまうときがあります。その場合は睡眠不足かもしれません。たくさん寝かしてあげましょう。
+      </div>
+    </div>
+  <% end %>
+  
+  <% if @life.present? %>
+    <div class="important-note">
+      仕事において
+    </div>
+    <div class="usage-instructions">
+      <div class="usage-instructions-p">
+        ・<%= current_user.nickname %>は仕事自体が<%= @work.work_like %>です。仕事に対するモチベーションが重要です。
+      </div>
+      <div class="usage-instructions-p">
+        ・集中するときは<%= @work.work_concentration %>なることがあるので、周囲は理解しておきましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・話し合いや会議で白熱すると<%= @work.work_incandescent %>なることがあります。冷静さを保つために深呼吸を心がけましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・細かい作業は<%= @work.work_fine_work %>です。適切なタスクを割り当てましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・力仕事は<%= @work.work_heavy_lifting %>です。適切な役割分担を心がけましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・仕事で人と話すのは<%= @work.work_communication %>です。コミュニケーションスキルを活かしましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・残業は<%= @work.work_overtime %>です。バランスを取りながら働きましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・会社の飲み会は<%= @work.work_party %>です。無理せず楽しむことが大切です。
+      </div>
+      <div class="usage-instructions-p">
+        ・幹事をするタイプかどうかは<%= @work.work_party_owner %>です。適材適所で役割を見極めましょう。
+      </div>
+    </div>
+  <% end %>
+
+  <% if @school.present? %>
+    <div class="important-note">
+        学校において
+    </div>
+    <div class="usage-instructions">
+      <div class="usage-instructions-p">
+        ・<%= current_user.nickname %>さんは<%= @school.favorite_subject_reason %>から<%= @school.favorite_subject %>の勉強はたくさんさせてあげましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・<%= current_user.nickname %>さんは<%= @school.least_favorite_subject_reason %>から<%= @school.least_favorite_subject %>の勉強のはこれ以上嫌いにならないようにほどほどにしましょう。
+      </div>
+      <% if @school.talking_with_friends == 'はい' && @school.group_activities == '得意' %>
+        <div class="usage-instructions-p">
+          ・集団で人と話すのが好きです。定期的にその時間を作ってあげましょう。
+        </div>
+      <% elsif @school.talking_with_friends == 'はい' && @school.group_activities == '不得意' %>
+        <div class="usage-instructions-p">
+          ・友達と話すのは好きですが集団は苦手です。集団行動が疲れたら、仲のいい<%= @school.best_friend %>と２人で話しましょう。
+        </div>
+      <% elsif @school.talking_with_friends == 'いいえ' && @school.group_activities == '得意' %>
+        <div class="usage-instructions-p">
+          ・人と話すのは苦手ですが、集団の輪にいるのは好きです。あまり話さなくても楽しんでいるので積極的に参加しましょう。
+        </div>
+      <% elsif @school.talking_with_friends == 'いいえ' && @school.group_activities == '不得意' %>
+        <div class="usage-instructions-p">
+          ・友達と話したり、集団でいるのが好きではありません。一人の時間や少人数の時間を積極的に作ってあげましょう。
+        </div>
+      <% end %>
+      <div class="usage-instructions-p">
+        ・たまに何か嫌なことがあって落ち込んだり、頑張れないことがあります。その時はランチで<%= @school.lunch_preference %>を食べると元気が出るかもしれません。
+      </div>
+      <div class="usage-instructions-p">
+        ・悩んだり、将来に不安になることがあります。そんな時は<%= @school.teacher_pet %>を頼るといいかもしれません。
+      </div>
+      <div class="usage-instructions-p">
+        ・<%= @school.favorite_school_event %>が大好きです。<%= @school.best_friend %>など仲のいい人と楽しむ時間を作りましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・急に元気がなくなることがあります。そんな時は<%= @school.favorite_place_at_school %>で考えや気持ちを整理しましょう。
+      </div>
+    </div>
+  <% end %>
+
+  <% if @partner.present? %>
+    <div class="important-note">
+        パートナーとの関係において
+    </div>
+    <div class="usage-instructions">
+      <% if @partner.affection_expression == '得意' %>
+        <div class="usage-instructions-p">
+          ・愛情表現が得意な方です。得意だと相手にも求めがちですがそれは逆効果です。愛情の押し付けには気をつけましょう。
+        </div>
+      <% else %>
+        <div class="usage-instructions-p">
+          ・愛情表現が不得意です。意識して頑張りましょう。
+        </div>
+      <% end %>
+      <div class="usage-instructions-p">
+        ・故障かなと思ったら、<%= @partner.comforting_action %>あげましょう。機嫌が直ります。
+      </div>
+      <div class="usage-instructions-p">
+        ・<%= @partner.disagreement_trigger %>ときには注意しましょう。喧嘩してしまう場合があります。
+      </div>
+      <div class="usage-instructions-p">
+        ・もしけんかしてしまったら<%= @partner.favorite_aspect %>ところを思い浮かべましょう。他人とぶつかってしまうのは当たり前なので、好きな部分を思いつつ寄り添う努力をしましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・初心を忘れてしまうときがあります。相手の<%= @partner.initial_attraction %>なところを思い出してみましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・<%= @partner.ideal_relationship %>が理想です。<%= @partner.favorite_date %>デートをして、2人の関係について話し合ってみましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・落ち着きがないときがあります。<%= @partner.calm_activity %>してあげましょう。
+      </div>
+      <% if @partner.appearance_concern == 'はい' %>
+        <div class="usage-instructions-p">
+          ・外見に無頓着です。整えてあげましょう。
+        </div>
+      <% else %>
+        <div class="usage-instructions-p">
+          ・身だしなみを整えるのが得意です。喜ぶのでほめてあげましょう。
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
 
 </div>
-
-
-
-
 <%= render "shared/footer" %>

@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+<div class="introduction-background-container">
+  <div class="introduction-container">
+    <div class='introduction-box'>
+      <h1>仕事について</h1>
+      <table class="introduction-info-table">
+        <tr>
+          <th>仕事自体が好きですか</th>
+          <td><%= @work.work_like %></td>
+        </tr>
+        <tr>
+          <th>集中するとどうなりますか</th>
+          <td><%= @work.work_concentration %>なる</td>
+        </tr>
+        <tr>
+          <th>話し合いや会議で白熱するとどうなりますか</th>
+          <td><%= @work.work_incandescent %>なる</td>
+        </tr>
+        <tr>
+          <th>細かい作業は得意ですか</th>
+          <td><%= @work.work_fine_work %></td>
+        </tr>
+        <tr>
+          <th>力仕事は得意ですか</th>
+          <td><%= @work.work_heavy_lifting %></td>
+        </tr>
+        <tr>
+          <th>仕事で人と話すのは得意ですか</th>
+          <td><%= @work.work_communication %></td>
+        </tr>
+        <tr>
+          <th>残業はしたいですか</th>
+          <td><%= @work.work_overtime %></td>
+        </tr>
+        <tr>
+          <th>会社の飲み会は好きですか</th>
+          <td><%= @work.work_party %></td>
+        </tr>
+        <tr>
+          <th>幹事をするタイプですか</th>
+          <td><%= @work.work_party_owner %></td>
+        </tr>
+      </table>
+
+      <div class="introduction-actions">
+        <%= link_to '編集', edit_torisetsu_work_path(@torisetsu, @work), class: "introduction-btn-primary" %>
+        <%= link_to '削除', torisetsu_work_path(@torisetsu, @work), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

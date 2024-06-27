@@ -6,10 +6,16 @@ body, html {
 
 
 .home-container{
-
+  background-image: url('haikei.png');
+  background-size: cover; /* 画像をコンテナのサイズに合わせる */
+  background-position: center; /* 画像を中央に配置 */
+  background-repeat: no-repeat; /* 画像を繰り返さない */
+  min-height: 100vh; /* コンテナの高さを全画面に設定 */
+  position: relative; /* 子要素の絶対位置を基準にする */
   width: 100vw;
-  background-color: #F0EFE9;
+  padding: 30px 0 ;
 }
+
 
 .home-top-container{
   display: flex;
@@ -26,11 +32,13 @@ body, html {
 .app-preview{
   width: 650px;
   height: auto;
+  border-radius: 6px
 }
 
 .app-kanngaeru{
   width: auto;
   height: 250px;
+  border-radius: 6px
 }
 
 
