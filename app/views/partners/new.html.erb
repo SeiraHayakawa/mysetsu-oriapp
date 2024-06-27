@@ -1,0 +1,79 @@
+<%= render "shared/header" %>
+
+<div class="forms-wraps">
+  <%= form_with model: [@torisetsu, @partner], url: torisetsu_partners_path(@torisetsu), class:"form-class", local: true do |f| %>
+    <div class='form-box'>
+      <h1>パートナーについて教えてください</h1>
+      <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group">
+        <%= f.label :favorite_aspect, "パートナーのどこが好きですか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :favorite_aspect, class: "form-control-with-suffix", placeholder: "例) 優しい" %>
+          <span class="suffix">ところ</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :calm_activity, "なにをパートナーとしていると落ち着きますか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :calm_activity, class: "form-control-with-suffix", placeholder: "例) 散歩" %>
+          <span class="suffix">しているとき</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :initial_attraction, "パートナーのどういう部分に初め惹かれましたか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :initial_attraction, class: "form-control-with-suffix", placeholder: "例) 笑顔がすてき" %>
+          <span class="suffix">なところ</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comforting_action, "機嫌が悪い時はどうしてほしいですか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :comforting_action, class: "form-control-with-suffix", placeholder: "例) 話を聞いて" %>
+          <span class="suffix">ほしい</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :disagreement_trigger, "どういうときに喧嘩になりやすかったり、いやな気持になりやすいですか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :disagreement_trigger, class: "form-control-with-suffix", placeholder: "例) 疲れている" %>
+          <span class="suffix">とき</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :appearance_concern, "自分の見た目に無頓着ですか" %>
+        <%= f.select :appearance_concern, options_for_select(['はい', 'いいえ']), { include_blank: '選択してください' }, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :favorite_date, "どんなデートが好きですか" %>
+        <div class="input-with-suffix">
+          <%= f.text_field :favorite_date, class: "form-control-with-suffix", placeholder: "例) 映画をゆっくり見る" %>
+          <span class="suffix">デート</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :ideal_relationship, "どういうパートナーとの関係が理想ですか" %>
+        <%= f.select :ideal_relationship, options_for_select(['落ち着きのある関係', 'いつまでもラブラブな関係', 'お互いのやりたいことを尊重できる関係']), { include_blank: '選択してください' }, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :affection_expression, "愛情表現が得意ですか" %>
+        <%= f.select :affection_expression, options_for_select(['得意', '不得意']), { include_blank: '選択してください' }, class: "form-control" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "完了", class: "btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= render "shared/footer" %>

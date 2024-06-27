@@ -67,9 +67,17 @@ belongs_to :torisetsu
 
 
 ## works
-|Column            |Type   |Options                  |
-|          |string |null: false              |
-|torisetsu|references|null: false, foreign_key: true|
+|Column            |Type      |Options                       |
+|work_like         |string    |null: false                   |
+|work_concentration|string    |null: false                   |
+|work_incandescent |string    |null: false                   |
+|work_fine_work    |string    |null: false                   |
+|work_heavy_lifting|string    |null: false                   |
+|work_communication|string    |null: false                   |
+|work_overtime     |string    |null: false                   |
+|work_party        |string    |null: false                   |
+|work_party_owner  |string    |null: false                   |
+|torisetsu         |references|null: false, foreign_key: true|
 
 
 ### Association

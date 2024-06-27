@@ -30,7 +30,7 @@
           <div class="form-group">
             <%= f.label :life_crytime, "泣いているときはどうしてほしいですか" %>
             <div class="input-with-suffix">
-              <%= f.text_field :life_crytime, class: "form-control-with-suffix", placeholder: "" %>
+              <%= f.text_field :life_crytime, class: "form-control-with-suffix", placeholder: "EX)理由を聞いて" %>
               <span class="suffix">ほしい</span>
             </div>
           </div>
@@ -38,7 +38,7 @@
           <div class="form-group">
             <%= f.label :life_anger, "機嫌が悪い時はどうしてほしいですか" %>
             <div class="input-with-suffix">
-              <%= f.text_field :life_anger, class: "form-control-with-suffix", placeholder: "" %>
+              <%= f.text_field :life_anger, class: "form-control-with-suffix", placeholder: "EX)なでて" %>
               <span class="suffix">ほしい</span>
             </div>
           </div>
@@ -50,7 +50,8 @@
 
           <div class="form-group">
             <%= f.label :life_sleep, "睡眠が足りないとどうなりますか" %>
-            <%= f.text_field :life_sleep, class: "form-control", placeholder: "" %>
+            <%= f.text_field :life_sleep, class: "form-control-with-suffix", placeholder: "EX)ぼーっとして" %>
+            <span class="suffix">しまう</span>
           </div>
 
 

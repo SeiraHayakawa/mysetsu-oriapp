@@ -1,0 +1,54 @@
+<%= render "shared/header" %>
+
+<div class="introduction-background-container">
+  <div class="introduction-container">
+    <div class='introduction-box'>
+      <h1>パートナーについて</h1>
+      <table class="introduction-info-table">
+        <tr>
+          <th>パートナーのどこが好きですか</th>
+          <td><%= @partner.favorite_aspect %>なところ</td>
+        </tr>
+        <tr>
+          <th>なにをパートナーとしていると落ち着きますか</th>
+          <td><%= @partner.calm_activity %>しているとき</td>
+        </tr>
+        <tr>
+          <th>パートナーのどういう部分に初め惹かれましたか</th>
+          <td><%= @partner.initial_attraction %>なところ</td>
+        </tr>
+        <tr>
+          <th>機嫌が悪い時はどうしてほしいですか</th>
+          <td><%= @partner.comforting_action %>ほしい</td>
+        </tr>
+        <tr>
+          <th>どういうときに喧嘩になりやすかったり、いやな気持になりやすいですか</th>
+          <td><%= @partner.disagreement_trigger %>とき</td>
+        </tr>
+        <tr>
+          <th>自分の見た目に無頓着ですか</th>
+          <td><%= @partner.appearance_concern %></td>
+        </tr>
+        <tr>
+          <th>どんなデートが好きですか</th>
+          <td><%= @partner.favorite_date %>デート</td>
+        </tr>
+        <tr>
+          <th>どういうパートナーとの関係が理想ですか</th>
+          <td><%= @partner.ideal_relationship %></td>
+        </tr>
+        <tr>
+          <th>愛情表現が得意ですか</th>
+          <td><%= @partner.affection_expression %></td>
+        </tr>
+      </table>
+
+      <div class="introduction-actions">
+        <%= link_to '編集', edit_torisetsu_partner_path(@torisetsu, @partner), class: "introduction-btn-primary" %>
+        <%= link_to '削除', torisetsu_partner_path(@torisetsu, @partner), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "introduction-btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

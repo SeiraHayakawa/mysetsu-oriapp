@@ -11,6 +11,9 @@ class TorisetsusController < ApplicationController
     @user = @torisetsu.user
     @introduction = @torisetsu.introduction
     @life = @torisetsu.life
+    @work = @torisetsu.work
+    @school = @torisetsu.school
+    @partner = @torisetsu.partner
     # 他の関連情報もここで取得できます
   end
 

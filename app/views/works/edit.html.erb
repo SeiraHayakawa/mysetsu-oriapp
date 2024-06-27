@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+
+<div class='forms-wraps'>
+  <div class="forms-wraps">
+    <%= form_with model: [@torisetsu, @work], url: torisetsu_work_path(@torisetsu, @work), class:"form-class", local: true do |f| %>
+      <div class='form-box'>
+          <h1>フォームを編集してください</h1>
+          <%= render 'shared/error_messages', model: f.object %>
+          
+          <div class="form-group">
+            <%= f.label :work_like, "仕事自体が好きですか" %>
+            <%= f.select :work_like, options_for_select(['好きです', 'そこまで好きではありません']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_concentration, "集中するとどうなりますか" %>
+            <div class="input-with-suffix">
+              <%= f.text_field :work_concentration, class: "form-control-with-suffix", placeholder: "EX)返事が適当に" %>
+              <span class="suffix">なる</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_incandescent, "話し合いや会議で白熱するとどうなりますか" %>
+            <div class="input-with-suffix">
+              <%= f.text_field :work_incandescent, class: "form-control-with-suffix", placeholder: "EX)少し声が大きく" %>
+              <span class="suffix">なる</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_fine_work, "細かい作業は得意ですか" %>
+            <%= f.select :work_fine_work, options_for_select(['得意', '不得意']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_heavy_lifting, "力仕事は得意ですか" %>
+            <%= f.select :work_heavy_lifting, options_for_select(['得意', '不得意']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_communication, "仕事で人と話すのは得意ですか" %>
+            <%= f.select :work_communication, options_for_select(['得意', '不得意']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_overtime, "残業はしたいですか" %>
+            <%= f.select :work_overtime, options_for_select(['したい', 'したくない']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_party, "会社の飲み会は好きですか" %>
+            <%= f.select :work_party, options_for_select(['好きです', 'そこまで好きではありません']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :work_party_owner, "幹事をするタイプですか" %>
+            <%= f.select :work_party_owner, options_for_select(['はい', 'いいえ']), { include_blank: '選択してください' }, class: "form-control" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "完了", class: "btn-primary" %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>

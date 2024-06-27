@@ -17,12 +17,18 @@
 
           <div class="form-group">
             <%= f.label :body_height, "身長 (cm)" %>
-            <%= f.number_field :body_height, class: "form-control" %>cm
+            <div class="input-with-suffix">
+              <%= f.number_field :body_height, class: "form-control-with-suffix", placeholder: "EX)170" %>
+              <span class="suffix">cm</span>
+            </div>
           </div>
 
           <div class="form-group">
-            <%= f.label :body_weight, "体重 (kg)" %>
-            <%= f.text_field :body_weight, class: "form-control", placeholder: "(ひみつ)でもいいよ" %>kg
+            <%= f.label :body_weight, "体重" %>
+            <div class="input-with-suffix">
+              <%= f.text_field :body_weight, class: "form-control-with-suffix", placeholder: "(ひみつ)でもいいよ" %>
+              <span class="suffix">kg</span>
+            </div>
           </div>
 
           <div class="form-group">
