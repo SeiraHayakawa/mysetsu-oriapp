@@ -111,9 +111,9 @@
       <div class="usage-instructions-p">
         ・<%= current_user.nickname %>は<%= @life.life_cry %>です。
         <% if @life.life_cry == '泣き虫' %>
-          泣いているときは<%= @life.life_crytime %>ので、そうしてあげましょう。
+          泣いているときは<%= @life.life_crytime %>ほしいので、そうしてあげましょう。
         <% else %>
-        泣いているときは非常事態です。<%= @life.life_crytime %>ので、そうしてあげましょう。
+        泣いているときは非常事態です。<%= @life.life_crytime %>ほしいので、そうしてあげましょう。
         <% end %>
       </div>
       <div class="usage-instructions-p">
@@ -128,40 +128,7 @@
     </div>
   <% end %>
   
-  <% if @life.present? %>
-    <div class="important-note">
-      仕事において
-    </div>
-    <div class="usage-instructions">
-      <div class="usage-instructions-p">
-        ・<%= current_user.nickname %>は仕事自体が<%= @work.work_like %>です。仕事に対するモチベーションが重要です。
-      </div>
-      <div class="usage-instructions-p">
-        ・集中するときは<%= @work.work_concentration %>なることがあるので、周囲は理解しておきましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・話し合いや会議で白熱すると<%= @work.work_incandescent %>なることがあります。冷静さを保つために深呼吸を心がけましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・細かい作業は<%= @work.work_fine_work %>です。適切なタスクを割り当てましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・力仕事は<%= @work.work_heavy_lifting %>です。適切な役割分担を心がけましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・仕事で人と話すのは<%= @work.work_communication %>です。コミュニケーションスキルを活かしましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・残業は<%= @work.work_overtime %>です。バランスを取りながら働きましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・会社の飲み会は<%= @work.work_party %>です。無理せず楽しむことが大切です。
-      </div>
-      <div class="usage-instructions-p">
-        ・幹事をするタイプかどうかは<%= @work.work_party_owner %>です。適材適所で役割を見極めましょう。
-      </div>
-    </div>
-  <% end %>
+ 
 
   <% if @school.present? %>
     <div class="important-note">
@@ -221,13 +188,13 @@
         </div>
       <% end %>
       <div class="usage-instructions-p">
-        ・故障かなと思ったら、<%= @partner.comforting_action %>あげましょう。機嫌が直ります。
+        ・故障かなと思ったら、不機嫌になっている合図です。<%= @partner.comforting_action %>あげましょう。機嫌が直ります。
       </div>
       <div class="usage-instructions-p">
         ・<%= @partner.disagreement_trigger %>ときには注意しましょう。喧嘩してしまう場合があります。
       </div>
       <div class="usage-instructions-p">
-        ・もしけんかしてしまったら<%= @partner.favorite_aspect %>ところを思い浮かべましょう。他人とぶつかってしまうのは当たり前なので、好きな部分を思いつつ寄り添う努力をしましょう。
+        ・もしけんかしてしまったら相手の<%= @partner.favorite_aspect %>ところを思い浮かべましょう。他人とぶつかってしまうのは当たり前なので、好きな部分を思いつつ寄り添う努力をしましょう。
       </div>
       <div class="usage-instructions-p">
         ・初心を忘れてしまうときがあります。相手の<%= @partner.initial_attraction %>なところを思い出してみましょう。
@@ -236,7 +203,7 @@
         ・<%= @partner.ideal_relationship %>が理想です。<%= @partner.favorite_date %>デートをして、2人の関係について話し合ってみましょう。
       </div>
       <div class="usage-instructions-p">
-        ・落ち着きがないときがあります。<%= @partner.calm_activity %>してあげましょう。
+        ・落ち着きがないときや悲しくなる時があります。<%= @partner.calm_activity %>してあげましょう。
       </div>
       <% if @partner.appearance_concern == 'はい' %>
         <div class="usage-instructions-p">
@@ -247,6 +214,41 @@
           ・身だしなみを整えるのが得意です。喜ぶのでほめてあげましょう。
         </div>
       <% end %>
+    </div>
+  <% end %>
+
+   <% if @life.present? %>
+    <div class="important-note">
+      仕事において
+    </div>
+    <div class="usage-instructions">
+      <div class="usage-instructions-p">
+        ・<%= current_user.nickname %>は仕事自体が<%= @work.work_like %>です。仕事に対するモチベーションが重要です。
+      </div>
+      <div class="usage-instructions-p">
+        ・集中するときは<%= @work.work_concentration %>なることがあるので、周囲は理解しておきましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・話し合いや会議で白熱すると<%= @work.work_incandescent %>なることがあります。冷静さを保つために深呼吸を心がけましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・細かい作業は<%= @work.work_fine_work %>です。適切なタスクを割り当てましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・力仕事は<%= @work.work_heavy_lifting %>です。適切な役割分担を心がけましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・仕事で人と話すのは<%= @work.work_communication %>です。コミュニケーションスキルを活かしましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・残業は<%= @work.work_overtime %>です。バランスを取りながら働きましょう。
+      </div>
+      <div class="usage-instructions-p">
+        ・会社の飲み会は<%= @work.work_party %>です。無理せず楽しむことが大切です。
+      </div>
+      <div class="usage-instructions-p">
+        ・幹事をするタイプかどうかは<%= @work.work_party_owner %>です。適材適所で役割を見極めましょう。
+      </div>
     </div>
   <% end %>
 
