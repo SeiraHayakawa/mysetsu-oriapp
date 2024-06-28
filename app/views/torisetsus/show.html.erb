@@ -226,28 +226,45 @@
         ・<%= current_user.nickname %>は仕事自体が<%= @work.work_like %>です。仕事に対するモチベーションが重要です。
       </div>
       <div class="usage-instructions-p">
-        ・集中するときは<%= @work.work_concentration %>なることがあるので、周囲は理解しておきましょう。
+        ・集中するときは<%= @work.work_concentration %>なることがあるので、周囲に理解を求めておきましょう。
       </div>
       <div class="usage-instructions-p">
-        ・話し合いや会議で白熱すると<%= @work.work_incandescent %>なることがあります。冷静さを保つために深呼吸を心がけましょう。
+        ・話し合いや会議で白熱すると<%= @work.work_incandescent %>なることがあります。深呼吸を心がけましょう。
       </div>
       <div class="usage-instructions-p">
-        ・細かい作業は<%= @work.work_fine_work %>です。適切なタスクを割り当てましょう。
+        <% if @work.work_fine_work == '得意' %>
+          <% if @work.work_heavy_lifting  == '得意' %>
+            ・細かい作業も力仕事も得意です。たくさんアピールしましょう。
+          <% else %>
+            ・力仕事は苦手ですが、細かい作業は得意です。積極的にできる仕事を引き受けましょう。
+          <% end %>
+        <% else %>
+          <% if @work.work_heavy_lifting  == '不得意' %>
+            ・細かい作業も力仕事も苦手です。積極的に人に頼りましょう。
+          <% else %>
+            ・細かい作業は苦手ですが、力仕事は得意です。積極的に力持ちアピールをしましょう。
+          <% end %>
+        <% end %>
       </div>
       <div class="usage-instructions-p">
-        ・力仕事は<%= @work.work_heavy_lifting %>です。適切な役割分担を心がけましょう。
-      </div>
-      <div class="usage-instructions-p">
-        ・仕事で人と話すのは<%= @work.work_communication %>です。コミュニケーションスキルを活かしましょう。
+        <% if @work.work_communication  == '得意' %>
+          ・仕事で人と話すのは得意です。コミュニケーションスキルを活かしましょう。
+        <% else %>
+          ・仕事で人と話すのは苦手です。コミュニケーションスキルを伸ばせるように努力しましょう。
+        <% end %>
       </div>
       <div class="usage-instructions-p">
         ・残業は<%= @work.work_overtime %>です。バランスを取りながら働きましょう。
       </div>
       <div class="usage-instructions-p">
-        ・会社の飲み会は<%= @work.work_party %>です。無理せず楽しむことが大切です。
+        ・会社の飲み会は<%= @work.work_party %>。無理せず楽しみましょう。嫌なときはすぐに帰りましょう。
       </div>
       <div class="usage-instructions-p">
-        ・幹事をするタイプかどうかは<%= @work.work_party_owner %>です。適材適所で役割を見極めましょう。
+        <% if @work.work_party_owner  == 'はい' %>
+          ・幹事タイプです。たくさん盛り上げましょう。
+        <% else %>
+          ・幹事などは苦手です。してくれる人に感謝の気持ちを忘れないようにしましょう。
+        <% end %>
       </div>
     </div>
   <% end %>
