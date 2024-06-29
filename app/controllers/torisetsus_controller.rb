@@ -14,6 +14,7 @@ class TorisetsusController < ApplicationController
     @work = @torisetsu.work
     @school = @torisetsu.school
     @partner = @torisetsu.partner
+    @hobby = @torisetsu.hobby
     # 他の関連情報もここで取得できます
   end
 

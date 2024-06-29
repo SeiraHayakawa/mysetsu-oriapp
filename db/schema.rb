@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_06_27_083138) do
+ActiveRecord::Schema[7.0].define(version: 2024_06_28_065002) do
+  create_table "hobbies", charset: "utf8", force: :cascade do |t|
+    t.string "hobby_name", null: false
+    t.string "frequency", null: false
+    t.string "no_time_effect", null: false
+    t.string "satisfaction_moment", null: false
+    t.string "immersion_effect", null: false
+    t.string "start_time", null: false
+    t.string "fatigue_effect", null: false
+    t.string "inability_effect", null: false
+    t.bigint "torisetsu_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["torisetsu_id"], name: "index_hobbies_on_torisetsu_id"
+  end
+
   create_table "introductions", charset: "utf8", force: :cascade do |t|
     t.date "birth_day", null: false
     t.string "blood_type", null: false
@@ -116,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_06_27_083138) do
     t.index ["torisetsu_id"], name: "index_works_on_torisetsu_id"
   end
 
+  add_foreign_key "hobbies", "torisetsus"
   add_foreign_key "introductions", "torisetsus"
   add_foreign_key "lives", "torisetsus"
   add_foreign_key "partners", "torisetsus"

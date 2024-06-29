@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :works
     resources :schools
     resources :partners
+    resources :hobbys
   end
 end

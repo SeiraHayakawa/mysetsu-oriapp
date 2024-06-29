@@ -37,7 +37,13 @@
       <% else %>
         <li class="list-item"><%= link_to '仕事について', new_torisetsu_work_path(@torisetsu), class: "torisetsu_button" %></li>
       <% end %>
-      <li class="list-item"><%= link_to '趣味について', "#", class: "torisetsu_button" %></li>
+
+      <% if @torisetsu.hobby.present? %>
+        <li class="list-item"><%= link_to '趣味について', torisetsu_hobby_path(@torisetsu, @torisetsu.hobby), class: "torisetsu_button" %></li>
+      <% else %>
+        <li class="list-item"><%= link_to '趣味について', new_torisetsu_hobby_path(@torisetsu), class: "torisetsu_button" %></li>
+      <% end %>
+      
     </ul>
   </div>
 </div>
