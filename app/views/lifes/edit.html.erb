@@ -6,31 +6,31 @@
       <div class='form-box'>
           <h1>フォームを編集してください</h1>
           <%= render 'shared/error_messages', model: f.object %>
-          
+
           <div class="form-group">
             <%= f.label :life_morning, "寝起きはいいですか" %>
-            <%= f.select :life_morning, options_for_select(['よい', 'よくない']), { include_blank: '選択してください' }, class: "form-control" %>
+            <%= f.select :life_morning, options_for_select(['よい', 'よくない'], selected: @life.life_morning), { include_blank: '選択してください' }, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :life_breakfast, "朝ごはんはたべますか" %>
-            <%= f.select :life_breakfast, options_for_select(['食べる派', '食べない派',]), { include_blank: '選択してください' }, class: "form-control" %>
+            <%= f.select :life_breakfast, options_for_select(['食べる派', '食べない派'], selected: @life.life_breakfast), { include_blank: '選択してください' }, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :life_breakfast_weight, "ご飯はたくさん食べますか" %>
-            <%= f.select :life_breakfast_weight, options_for_select(['よく食べる', 'そんなに食べない', '普通']), { include_blank: '選択してください' }, class: "form-control" %>
+            <%= f.select :life_breakfast_weight, options_for_select(['よく食べる', 'そんなに食べない', '普通'], selected: @life.life_breakfast_weight), { include_blank: '選択してください' }, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :life_cry, "泣き虫ですか" %>
-            <%= f.select :life_cry, options_for_select(['泣き虫', '泣き虫ではない']), { include_blank: '選択してください' }, class: "form-control" %>
+            <%= f.select :life_cry, options_for_select(['泣き虫', '泣き虫ではない'], selected: @life.life_cry), { include_blank: '選択してください' }, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :life_crytime, "泣いているときはどうしてほしいですか" %>
             <div class="input-with-suffix">
-              <%= f.text_field :life_crytime, class: "form-control-with-suffix", placeholder: "EX)理由を聞いて" %>
+              <%= f.text_field :life_crytime, value: @life.life_crytime, class: "form-control-with-suffix", placeholder: "EX)理由を聞いて" %>
               <span class="suffix">ほしい</span>
             </div>
           </div>
@@ -38,24 +38,24 @@
           <div class="form-group">
             <%= f.label :life_anger, "機嫌が悪い時はどうしてほしいですか" %>
             <div class="input-with-suffix">
-              <%= f.text_field :life_anger, class: "form-control-with-suffix", placeholder: "EX)なでて" %>
+              <%= f.text_field :life_anger, value: @life.life_anger, class: "form-control-with-suffix", placeholder: "EX)なでて" %>
               <span class="suffix">ほしい</span>
             </div>
           </div>
 
           <div class="form-group">
             <%= f.label :life_battle, "喧嘩したらどうしたいですか" %>
-            <%= f.select :life_battle, options_for_select(['ほっといてほしい', 'すぐに解決したい', 'しばらく考えを寝かしたい']), { include_blank: '選択してください' }, class: "form-control" %>
+            <%= f.select :life_battle, options_for_select(['ほっといてほしい', 'すぐに解決したい', 'しばらく考えを寝かしたい'], selected: @life.life_battle), { include_blank: '選択してください' }, class: "form-control" %>
           </div>
 
           <div class="form-group">
             <%= f.label :life_sleep, "睡眠が足りないとどうなりますか" %>
-            <%= f.text_field :life_sleep, class: "form-control-with-suffix", placeholder: "EX)ぼーっとして" %>
-            <span class="suffix">しまう</span>
+            <div class="input-with-suffix">
+              <%= f.text_field :life_sleep, value: @life.life_sleep, class: "form-control-with-suffix", placeholder: "EX)ぼーっとして" %>
+              <span class="suffix">しまう</span>
+            </div>
           </div>
-
-
-
+          
           <div class="actions">
             <%= f.submit "完了", class: "btn-primary" %>
           </div>

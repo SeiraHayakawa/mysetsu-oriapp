@@ -1,75 +1,75 @@
 <%= render "shared/header" %>
 
 <div class="forms-wraps">
-  <%= form_with model: [@torisetsu, @school], url: torisetsu_school_path(@torisetsu, @school), class:"form-class", local: true do |f| %>
+  <%= form_with model: [@torisetsu, @school], url: torisetsu_school_path(@torisetsu, @school), method: :patch, class:"form-class", local: true do |f| %>
     <div class='form-box'>
       <h1>学校について編集してください</h1>
       <%= render 'shared/error_messages', model: f.object %>
       
       <div class="form-group">
         <%= f.label :favorite_subject, "一番好きな勉強は？" %>
-        <%= f.text_field :favorite_subject, class: "form-control", placeholder: "例) 行動心理学" %>
+        <%= f.text_field :favorite_subject, value: @school.favorite_subject, class: "form-control", placeholder: "例) 行動心理学" %>
       </div>
 
       <div class="form-group">
         <%= f.label :favorite_subject_reason, "その理由は何ですか？" %>
         <div class="input-with-suffix">
-          <%= f.text_field :favorite_subject_reason, class: "form-control-with-suffix", placeholder: "例) 人に興味がある" %>
+          <%= f.text_field :favorite_subject_reason, value: @school.favorite_subject_reason, class: "form-control-with-suffix", placeholder: "例) 人に興味がある" %>
           <span class="suffix">から</span>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :least_favorite_subject, "一番嫌いな勉強は？" %>
-        <%= f.text_field :least_favorite_subject, class: "form-control", placeholder: "例) 数学" %>
+        <%= f.text_field :least_favorite_subject, value: @school.least_favorite_subject, class: "form-control", placeholder: "例) 数学" %>
       </div>
 
       <div class="form-group">
         <%= f.label :least_favorite_subject_reason, "その理由は何ですか？" %>
         <div class="input-with-suffix">
-          <%= f.text_field :least_favorite_subject_reason, class: "form-control-with-suffix", placeholder: "例) 数字がおもしろくない" %>
+          <%= f.text_field :least_favorite_subject_reason, value: @school.least_favorite_subject_reason, class: "form-control-with-suffix", placeholder: "例) 数字がおもしろくない" %>
           <span class="suffix">から</span>
         </div>
       </div>
 
       <div class="form-group">
         <%= f.label :teacher_pet, "好きな先生は誰ですか？" %>
-        <%= f.text_field :teacher_pet, class: "form-control", placeholder: "例) メンターの西尾さん" %>
+        <%= f.text_field :teacher_pet, value: @school.teacher_pet, class: "form-control", placeholder: "例) メンターの西尾さん" %>
       </div>
 
       <div class="form-group">
         <%= f.label :talking_with_friends, "友達と話すのは好きですか？" %>
-        <%= f.select :talking_with_friends, options_for_select(['はい', 'いいえ']), { include_blank: '選択してください' }, class: "form-control" %>
+        <%= f.select :talking_with_friends, options_for_select(['はい', 'いいえ'], @school.talking_with_friends), { include_blank: '選択してください' }, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :group_activities, "集団行動は得意ですか？" %>
-        <%= f.select :group_activities, options_for_select(['得意', '不得意']), { include_blank: '選択してください' }, class: "form-control" %>
+        <%= f.select :group_activities, options_for_select(['得意', '不得意'], @school.group_activities), { include_blank: '選択してください' }, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :lunch_preference, "給食やお弁当で好きなメニューは何ですか？" %>
-        <%= f.text_field :lunch_preference, class: "form-control", placeholder: "例) たまごやき" %>
+        <%= f.text_field :lunch_preference, value: @school.lunch_preference, class: "form-control", placeholder: "例) たまごやき" %>
       </div>
 
       <div class="form-group">
         <%= f.label :disliked_school_activities, "学校で苦手なことは何ですか？" %>
-        <%= f.text_field :disliked_school_activities, class: "form-control", placeholder: "例) 掃除" %>
+        <%= f.text_field :disliked_school_activities, value: @school.disliked_school_activities, class: "form-control", placeholder: "例) 掃除" %>
       </div>
 
       <div class="form-group">
         <%= f.label :best_friend, "一番仲のいい友達の名前は？" %>
-        <%= f.text_field :best_friend, class: "form-control", placeholder: "例) 田中太郎" %>
+        <%= f.text_field :best_friend, value: @school.best_friend, class: "form-control", placeholder: "例) 田中太郎" %>
       </div>
 
       <div class="form-group">
         <%= f.label :favorite_school_event, "一番好きな学校行事は？" %>
-        <%= f.text_field :favorite_school_event, class: "form-control", placeholder: "例) 文化祭" %>
+        <%= f.text_field :favorite_school_event, value: @school.favorite_school_event, class: "form-control", placeholder: "例) 文化祭" %>
       </div>
 
       <div class="form-group">
         <%= f.label :favorite_place_at_school, "学校で一番好きな場所は？" %>
-        <%= f.text_field :favorite_place_at_school, class: "form-control", placeholder: "例) 図書館" %>
+        <%= f.text_field :favorite_place_at_school, value: @school.favorite_place_at_school, class: "form-control", placeholder: "例) 図書館" %>
       </div>
 
       <div class="actions">
