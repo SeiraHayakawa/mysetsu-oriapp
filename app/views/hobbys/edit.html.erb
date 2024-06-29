@@ -1,0 +1,76 @@
+<%= render "shared/header" %>
+
+<div class='forms-wraps'>
+  <div class="forms-wraps">
+    <%= form_with model: [@torisetsu, @hobby], url: torisetsu_hobby_path(@torisetsu, @hobby), method: :patch, class: "form-class", local: true do |f| %>
+      <div class='form-box'>
+        <h1>趣味の情報を編集してください</h1>
+        <%= render 'shared/error_messages', model: f.object %>
+        
+        <div class="form-group">
+          <%= f.label :hobby_name, "趣味は何ですか" %>
+          <%= f.text_field :hobby_name, class: "form-control", placeholder: "例) 読書" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :frequency, "週にどれくらい時間をかけますか" %>
+          <%= f.text_field :frequency, class: "form-control", placeholder: "例) 3時間" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :inability_effect, "趣味を楽しむとどうなりますか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :inability_effect, class: "form-control-with-suffix", placeholder: "例) 何事にも機嫌がよく" %>
+            <span class="suffix">なる</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :no_time_effect, "趣味に時間がさけないとどうなりますか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :no_time_effect, class: "form-control-with-suffix", placeholder: "例) ストレスがたまってイライラしやすく" %>
+            <span class="suffix">なる</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :satisfaction_moment, "やりがいを感じるのはどんなときですか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :satisfaction_moment, class: "form-control-with-suffix", placeholder: "例) 新しい知識を得た" %>
+            <span class="suffix">とき</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :immersion_effect, "没頭するとどうなりますか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :immersion_effect, class: "form-control-with-suffix", placeholder: "例) 時間を忘れるように" %>
+            <span class="suffix">なる</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :start_time, "いつから始めましたか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :start_time, class: "form-control-with-suffix", placeholder: "例) 2020年" %>
+            <span class="suffix">から</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :fatigue_effect, "趣味で疲れたらどうなりますか" %>
+          <div class="input-with-suffix">
+            <%= f.text_field :fatigue_effect, class: "form-control-with-suffix", placeholder: "例) すぐに眠く" %>
+            <span class="suffix">なる</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "完了", class: "btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= render "shared/footer" %>

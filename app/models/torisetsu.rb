@@ -5,4 +5,5 @@ class Torisetsu < ApplicationRecord
   has_one :work
   has_one :school
   has_one :partner
+  has_one :hobby
 end
