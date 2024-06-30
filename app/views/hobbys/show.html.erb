@@ -6,7 +6,7 @@
       <h1><%= current_user.nickname %>の趣味について</h1>
       <table class="introduction-info-table">
         <tr>
-          <th>趣味</th>
+          <th>趣味は何ですか</th>
           <td><%= @hobby.hobby_name %></td>
         </tr>
         <tr>
@@ -41,6 +41,7 @@
       </table>
 
       <div class="introduction-actions">
+        <%= link_to 'TOP', torisetsus_path, class: "introduction-btn-primary" %>
         <%= link_to '編集', edit_torisetsu_hobby_path(@torisetsu, @hobby), class: "introduction-btn-primary" %>
         <%= link_to '削除', torisetsu_hobby_path(@torisetsu, @hobby), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
       </div>

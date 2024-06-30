@@ -1,38 +1,50 @@
 <%= render "shared/header" %>
 
 <div class="home-container">
-
-  <div class="home-top-container">
-    <div class="left-top-container">
-        <%= image_tag 'mysetsutarou.png', alt: 'App preview', class: 'app-preview' %>
-    </div>
-    <div class="right-top-container">
-        <div class="left-text-container">
-            Knowing yourself is biginning of all wisdom.
+  <div class="home-container-box">
+    <div class="home-top-container">
+        <div class="left-top-container">
+            <%= image_tag 'mysetsutarou.png', alt: 'App preview', class: 'app-preview' %>
         </div>
-        <div class="left-picture-container">
-            <%= image_tag 'kanngaeru2.png', alt: 'App kanngaeru', class: 'app-kanngaeru' %>
+        <div class="right-top-container">
+            <div class="left-text-container">
+                Knowing yourself is biginning of all wisdom.
+            </div>
+            <div class="left-picture-container">
+                <%= image_tag 'kanngaeru2.png', alt: 'App kanngaeru', class: 'app-kanngaeru' %>
+            </div>
         </div>
     </div>
   </div>
 
-  <div class="home-bottom-container">
-    <div class="bottom-center-container">
-      <h2 class='title'>
-      MYSETSUとは
-      </h2>
-      <p class='user-introduction-container'>
-      自分で自分のことがわからなくなるときや、周りの人に自分を説明するときにわからなくなることはないですか。<br/>
-      そんなときにMYSETSUはあなたという人を理解することの手助けをしてくれます。
-      </p>
-      <div class="start_container">
-        <h2 class='title'>
-        さっそく始めてみましょう
-        </h2>
-      </div>
-      <div class="start_container2">
-        <div class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "user_index_button" %></div>
-      </div>
+  <div class="home-container-box">
+    <div class="home-bottom-container">
+        <div class="bottom-center-container">
+            <h2 class='title'>
+            MYSETSUとは
+            </h2>
+            <p class='user-introduction-container'>
+            自分で自分のことがわからなくなるときや、周りの人に自分を説明するときにわからなくなることはないですか。<br/>
+            そんなときにMYSETSUはあなたという人を理解することの手助けをしてくれます。
+            </p>
+            <h2 class='title'>
+            使用方法
+            </h2>
+            <p class='user-introduction-container'>
+            1.ログインもしくは新機関員登録します。<br/>
+            2.ユーザーのホーム画面の入力したい項目を選択してフォームに記入します。
+            3.プレビューボタンをクリックするとあなただけのMYSETSUを閲覧することができます。
+            </p>
+            <div class="start_container">
+                <h2 class='title'>
+                さっそく始めてみましょう
+                </h2>
+            </div>
+            <div class="start_container2">
+                <div class="nav-item-first"><%= link_to '新規登録', new_user_registration_path, class: "user_index_button" %></div>
+                <div class="nav-item-first"><%= link_to 'ログイン', new_user_session_path, class: "user_index_button" %></div>
+            </div>
+        </div>
     </div>
   </div>
 </div>

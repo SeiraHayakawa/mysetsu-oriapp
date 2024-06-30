@@ -43,8 +43,12 @@
       <% else %>
         <li class="list-item"><%= link_to '趣味について', new_torisetsu_hobby_path(@torisetsu), class: "torisetsu_button" %></li>
       <% end %>
-      
+
     </ul>
+    <div class="preview-button">
+      <%= link_to 'プレビュー', torisetsu_path(current_user.torisetsu), class: "user_index_button" %>
+      </div>
+    </div>
   </div>
 </div>
 

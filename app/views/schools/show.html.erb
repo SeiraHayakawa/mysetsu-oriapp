@@ -1,28 +1,29 @@
 <%= render "shared/header" %>
 
+
 <div class="introduction-background-container">
   <div class="introduction-container">
     <div class='introduction-box'>
       <h1>学校について</h1>
       <table class="introduction-info-table">
         <tr>
-          <th>一番好きな勉強</th>
+          <th>一番好きな勉強は何ですか</th>
           <td><%= @school.favorite_subject %></td>
         </tr>
         <tr>
-          <th>その理由</th>
+          <th>その理由は何ですか</th>
           <td><%= @school.favorite_subject_reason %></td>
         </tr>
         <tr>
-          <th>一番嫌いな勉強</th>
+          <th>一番嫌いな勉強は何ですか</th>
           <td><%= @school.least_favorite_subject %></td>
         </tr>
         <tr>
-          <th>その理由</th>
+          <th>その理由は何ですか</th>
           <td><%= @school.least_favorite_subject_reason %></td>
         </tr>
         <tr>
-          <th>好きな先生</th>
+          <th>好きな先生、話しやすい先生は誰ですか</th>
           <td><%= @school.teacher_pet %></td>
         </tr>
         <tr>
@@ -56,6 +57,7 @@
       </table>
 
       <div class="introduction-actions">
+        <%= link_to 'TOP', torisetsus_path, class: "introduction-btn-primary" %>
         <%= link_to '編集', edit_torisetsu_school_path(@torisetsu, @school), class: "introduction-btn-primary" %>
         <%= link_to '削除', torisetsu_school_path(@torisetsu, @school), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
       </div>
