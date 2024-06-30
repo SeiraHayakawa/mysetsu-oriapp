@@ -30,27 +30,54 @@ Basic認証パスワード: 2222
 SNSのプロフィールや名刺、入学オリエンテーション、合コン等、ビジネスの場面や個人使用など幅広い場面で活用できます。
 
 
+### アプリの主な挙動
+
+
 ### 実装した機能についての画像やGIFおよびその説明  
-・プロフィール作成機能  
-ユーザーが基本情報を入力して保存できます。
+・最終的な取説完成後のプレビュー動画  
+[![Image from Gyazo](https://i.gyazo.com/05a455517305708c7b2f0be2ae6854d9.gif)](https://gyazo.com/05a455517305708c7b2f0be2ae6854d9)  
 
-・生活習慣管理機能  
-ユーザーが生活習慣についての情報を入力して管理できます。
+・トップページ  
+ログイン、新規会員登録前のページです。
+[![Image from Gyazo](https://i.gyazo.com/3a6e7b5c4070337c6a18ad43e4419aff.gif)](https://gyazo.com/3a6e7b5c4070337c6a18ad43e4419aff)  
 
-・仕事の取扱説明機能  
-ユーザーが仕事に関する情報を入力して管理できます。
+・ログインページ  
+[![Image from Gyazo](https://i.gyazo.com/8fa667bfa2db4c33fb4170964a6e269c.gif)](https://gyazo.com/8fa667bfa2db4c33fb4170964a6e269c)  
+
+・新規会員登録ページ  
+[![Image from Gyazo](https://i.gyazo.com/b5792b772b8fce9a288435072f0f263e.gif)](https://gyazo.com/b5792b772b8fce9a288435072f0f263e)  
+
+・ログイン後のトップページからプロフィールの取扱説明機能の遷移  
+ユーザーが基本情報を入力して保存できます。  
+[![Image from Gyazo](https://i.gyazo.com/098ad02ec6a94179cfd55bc89a98edb2.gif)](https://gyazo.com/098ad02ec6a94179cfd55bc89a98edb2)  
+入力後は入力内容から編集機能も使用できます。  
+[![Image from Gyazo](https://i.gyazo.com/417bb10062813b848b22f2dd73911e37.gif)](https://gyazo.com/417bb10062813b848b22f2dd73911e37)  
+入力後は削除機能も使用できます。  
+[![Image from Gyazo](https://i.gyazo.com/a0b8417b5363ed1baefe8b541ffef9a1.gif)](https://gyazo.com/a0b8417b5363ed1baefe8b541ffef9a1)  
+
+・生活においての取扱説明機能    
+プロフィールの取扱説明機能の遷移と同様にフォーム入力、入力内容のページ遷移、編集・削除機能があります。  
+[![Image from Gyazo](https://i.gyazo.com/a0ca7fc405d6e743ddfc396aff83bb0d.gif)](https://gyazo.com/a0ca7fc405d6e743ddfc396aff83bb0d)  
 
 ・学校の取扱説明機能  
-ユーザーが学校に関する情報を入力して管理できます。
+プロフィールの取扱説明機能の遷移と同様にフォーム入力、入力内容のページ遷移、編集・削除機能があります。  
+[![Image from Gyazo](https://i.gyazo.com/b1277df08992f26e801d148147e7c05a.gif)](https://gyazo.com/b1277df08992f26e801d148147e7c05a)  
 
-・パートナーの取扱説明機能  
-ユーザーがパートナーとの関係に関する情報を入力して管理できます。
+・パートナーとの関係についての取扱説明機能  
+プロフィールの取扱説明機能の遷移と同様にフォーム入力、入力内容のページ遷移、編集・削除機能があります。  
+[![Image from Gyazo](https://i.gyazo.com/62bc6941686c662b670e895a02e72ce3.gif)](https://gyazo.com/62bc6941686c662b670e895a02e72ce3)  
+
+・仕事の取扱説明機能  
+プロフィールの取扱説明機能の遷移と同様にフォーム入力、入力内容のページ遷移、編集・削除機能があります。  
+[![Image from Gyazo](https://i.gyazo.com/356837f79ee39c738d4ff9ad861466e2.gif)](https://gyazo.com/356837f79ee39c738d4ff9ad861466e2)  
 
 ・趣味の取扱説明機能  
-ユーザーが趣味に関する情報を入力して管理できます。
+プロフィールの取扱説明機能の遷移と同様にフォーム入力、入力内容のページ遷移、編集・削除機能があります。 
+[![Image from Gyazo](https://i.gyazo.com/334b0c11ae5abc48b0ac1736345b144f.gif)](https://gyazo.com/334b0c11ae5abc48b0ac1736345b144f)  
 
-・プレビューと共有機能  
-入力した情報を取扱説明書としてプレビュー表示します。
+・プレビュー機能  
+入力した情報を取扱説明書としてプレビュー表示します。入力していない項目は表示されないので、自分でカスタマイズできます。  
+[![Image from Gyazo](https://i.gyazo.com/71e4e4944a42c3d01a36b7e3d5af6f32.gif)](https://gyazo.com/71e4e4944a42c3d01a36b7e3d5af6f32)  
 
 
 
