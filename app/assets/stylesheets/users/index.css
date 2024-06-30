@@ -6,27 +6,26 @@ body, html {
 
 
 .home-container{
-  background-image: url('haikei.png');
+  background-image: url('book2.png');
   background-size: cover; /* 画像をコンテナのサイズに合わせる */
   background-position: center; /* 画像を中央に配置 */
   background-repeat: no-repeat; /* 画像を繰り返さない */
   min-height: 100vh; /* コンテナの高さを全画面に設定 */
   position: relative; /* 子要素の絶対位置を基準にする */
   width: 100vw;
-  padding: 30px 0 ;
+  padding: 35px 0 ;
 }
 
 
 .home-top-container{
   display: flex;
-  justify-content: space-between;
-  padding: 0px 80px 1px 80px;
+  justify-content: space-around;
+  height: auto;
+  width: 1050px;
+  margin-bottom: 35px;
 }
 
-.left-top-container{
-  width: 600px;
-  height: auto;
-}
+
 
 
 .app-preview{
@@ -44,24 +43,25 @@ body, html {
 
 .left-text-container{
   border-radius: 50% 20% / 10% 40%;
-  padding: 0 20px;
-  background-color: #e9dcbc;
-  margin: 10px 45px 0 0;
+  padding: 7px 20px;
+  background-color: #e9dcbc9e;
+  margin: 10px 0 0 0;
 }
 
 .left-picture-container{
-  padding-left: 55px;
-  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
 }
 
-.home-bottom-container{
-  margin: 10px 100px 0 100px;
-  background-color: #e9dcbc;
+.home-bottom-container{  
+  background-color: #e9dcbcb8;
   border-radius: 50% 20% / 10% 40%;
+  width: 1040px;
 }
 
 .bottom-center-container{
-  padding: 1px 100px 21px 100px;
+  padding: 15px 100px 21px 100px;
 }
 
 .user_index_button{
@@ -86,4 +86,26 @@ body, html {
   display: flex;
   justify-content: center; /* 横方向の中央揃え */
   align-items: center;
+}
+
+.home-container-box{
+  display: flex;
+  justify-content: center;
+}
+
+.right-top-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-top-container{
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #e9dcbc9e;
+}
+
+
+.nav-item-first{
+  padding: 0 15px;
 }

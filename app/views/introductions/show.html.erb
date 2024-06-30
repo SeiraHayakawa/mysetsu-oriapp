@@ -6,40 +6,41 @@
       <h1><%= current_user.nickname %>について</h1>
       <table class="introduction-info-table">
         <tr>
-          <th>誕生日</th>
+          <th>誕生日は何ですか</th>
           <td><%= @introduction.birth_day.strftime('%Y年%m月%d日') %></td>
         </tr>
         <tr>
-          <th>血液型</th>
+          <th>血液型は何ですか</th>
           <td><%= @introduction.blood_type %></td>
         </tr>
         <tr>
-          <th>身長</th>
+          <th>身長は何センチですか</th>
           <td><%= @introduction.body_height %> cm</td>
         </tr>
         <tr>
-          <th>体重</th>
+          <th>体重は何キログラムですか</th>
           <td><%= @introduction.body_weight %> kg</td>
         </tr>
         <tr>
-          <th>好きな食べ物</th>
+          <th>好きな食べ物は何ですか</th>
           <td><%= @introduction.favorite_food %></td>
         </tr>
         <tr>
-          <th>苦手な食べ物</th>
+          <th>苦手な食べ物は何ですか</th>
           <td><%= @introduction.dislike_food %></td>
         </tr>
         <tr>
-          <th>好きな色</th>
+          <th>好きな色は何色ですか</th>
           <td><%= @introduction.favorite_color %></td>
         </tr>
         <tr>
-          <th>好きな場所</th>
+          <th>好きな場所はどこですか</th>
           <td><%= @introduction.favorite_place %></td>
         </tr>
       </table>
 
       <div class="introduction-actions">
+        <%= link_to 'TOP', torisetsus_path, class: "introduction-btn-primary" %>
         <%= link_to '編集', edit_torisetsu_introduction_path(@torisetsu, @introduction), class: "introduction-btn-primary" %>
         <%= link_to '削除', torisetsu_introduction_path(@torisetsu, @introduction), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
       </div>

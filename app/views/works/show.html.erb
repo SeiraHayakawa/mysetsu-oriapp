@@ -44,6 +44,7 @@
       </table>
 
       <div class="introduction-actions">
+        <%= link_to 'TOP', torisetsus_path, class: "introduction-btn-primary" %>
         <%= link_to '編集', edit_torisetsu_work_path(@torisetsu, @work), class: "introduction-btn-primary" %>
         <%= link_to '削除', torisetsu_work_path(@torisetsu, @work), method: :delete, data: {turbo_method: :delete}, class: "introduction-btn-danger" %>
       </div>

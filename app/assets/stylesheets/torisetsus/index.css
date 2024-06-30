@@ -1,5 +1,5 @@
 .background-container {
-  background-image: url('haikei.png');
+  background-image: url('book2.png');
   background-size: cover; /* 画像をコンテナのサイズに合わせる */
   background-position: center; /* 画像を中央に配置 */
   background-repeat: no-repeat; /* 画像を繰り返さない */
@@ -29,6 +29,7 @@
   padding: 30px;
   border-radius: 10px;
   z-index: 2; /* 背景の上に配置 */
+  margin: 20px 0;
 }
 
 .list-group {
@@ -68,4 +69,10 @@
 .top-text-torisetsus{
   display: flex;
   justify-content: center;
+}
+
+.preview-button{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
 }

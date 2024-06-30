@@ -44,6 +44,7 @@
       </table>
 
       <div class="introduction-actions">
+        <%= link_to 'TOP', torisetsus_path, class: "introduction-btn-primary" %>
         <%= link_to '編集', edit_torisetsu_partner_path(@torisetsu, @partner), class: "introduction-btn-primary" %>
         <%= link_to '削除', torisetsu_partner_path(@torisetsu, @partner), method: :delete, data: { confirm: '本当に削除しますか？' }, class: "introduction-btn-danger" %>
       </div>

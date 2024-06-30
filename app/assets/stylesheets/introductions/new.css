@@ -62,7 +62,7 @@ body {
 }
 
 .forms-wraps{
-  background-image: url('haikei.png');
+  background-image: url('book2.png');
   background-size: cover; /* 画像をコンテナのサイズに合わせる */
   background-position: center; /* 画像を中央に配置 */
   background-repeat: no-repeat; /* 画像を繰り返さない */
@@ -83,7 +83,7 @@ body {
   padding: 40px
 }
 .form-box {
-  background-color: #E3DED2;
+  background-color: #e9dcbcb8;
   padding-bottom: 50px;
   padding-top: 30px;
   border-radius: 20px;

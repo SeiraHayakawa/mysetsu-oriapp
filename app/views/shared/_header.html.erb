@@ -16,6 +16,7 @@
             <li class="nav-item"><%= link_to 'プレビュー', torisetsu_path(current_user.torisetsu), class: "header_button nav-link" %></li>
           <% end %>
           <% if controller.controller_name == 'torisetsus' && controller.action_name == 'show' %>
+            <li class="nav-item"><%= link_to 'TOPページ', torisetsus_path, class: "header_button nav-link" %></li>
             <li class="nav-item"><%= link_to '共有', "#", class: "header_button nav-link" %></li>
           <% end %>
           <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, data: {turbo_method: :delete}, class: "header_button nav-link" %></li>
