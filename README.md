@@ -39,7 +39,7 @@ SNSのプロフィールや名刺、入学オリエンテーション、合コ�
 
 ・トップページ  
 ログイン、新規会員登録前のページです。
-[![Image from Gyazo](https://i.gyazo.com/3a6e7b5c4070337c6a18ad43e4419aff.gif)](https://gyazo.com/3a6e7b5c4070337c6a18ad43e4419aff)  
+[![Image from Gyazo](https://i.gyazo.com/8aba648a508af42c8581438c98a60b4f.gif)](https://gyazo.com/8aba648a508af42c8581438c98a60b4f)  
 
 ・ログインページ  
 [![Image from Gyazo](https://i.gyazo.com/8fa667bfa2db4c33fb4170964a6e269c.gif)](https://gyazo.com/8fa667bfa2db4c33fb4170964a6e269c)  
