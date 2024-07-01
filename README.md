@@ -32,11 +32,6 @@ Basic認証パスワード: 2222
 SNSのプロフィールや名刺、ビジネスにおいてのチーム編成、入学オリエンテーション、マッチングアプリや結婚相談所、合コン等、ビジネスの場面や個人使用など、さまざまな幅広い場面で活用できます。  
 
 
-## ＜アプリの主な挙動＞
-
-
-
-
 ## ＜実装した機能についての画像やGIFおよびその説明＞  
 #### ・最終的な取説完成後のプレビュー動画  
 [![Image from Gyazo](https://i.gyazo.com/05a455517305708c7b2f0be2ae6854d9.gif)](https://gyazo.com/05a455517305708c7b2f0be2ae6854d9)  
@@ -99,7 +94,7 @@ SNSのプロフィールや名刺、ビジネスにおいてのチーム編成�
 [![Image from Gyazo](https://i.gyazo.com/b02f012433635963db59330994405a5e.png)](https://gyazo.com/b02f012433635963db59330994405a5e)  
 
 ## ページ遷移図
-MYSETSU.move.png
+![MYSETSU move](https://github.com/SeiraHayakawa/mysetsu-oriapp/assets/168966745/1f892793-4c97-404e-9b94-234bdb743631)
 
 
 
