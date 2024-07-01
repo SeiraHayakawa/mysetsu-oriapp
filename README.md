@@ -98,6 +98,11 @@ SNSのプロフィールや名刺、ビジネスにおいてのチーム編成�
 ## ＜データベース設計＞  
 [![Image from Gyazo](https://i.gyazo.com/b02f012433635963db59330994405a5e.png)](https://gyazo.com/b02f012433635963db59330994405a5e)  
 
+## ページ遷移図
+MYSETSU.move.png
+
+
+
 
 ## ＜開発環境＞  
 言語: Ruby on Rails  
